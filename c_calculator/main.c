@@ -35,8 +35,9 @@ void main(){
     char again;
     double A;
     double B;
+    double result;
 
-    printf("Welcome to the Simple C calculator!\nWhat is your first number?: ");
+    printf("\nWelcome to the Simple C calculator!\nWhat is your first number?: ");
     A = sanitizeNum();
 
     printf("What operation would you like to perform? (type +, -, *, or /): ");
@@ -47,24 +48,26 @@ void main(){
 
 
     if(operation == '+'){
-        printf("Add: %f\n", add(A, B));
+        result = add(A, B);
 
     } else if (operation == '-'){
-        printf("Subtract: %f\n", subtract(B, A));
+        result = subtract(A, B);
 
     } else if (operation == '*'){
-        printf("Multiply: %f\n", multiply(A, B));
+        result = multiply(A, B);
 
     } else if (operation == '/'){
-        printf("Divide: %f\n", divide(B, A));
+        result = divide(A, B);
     }
+
+    printf("\n%f %c %f = %f\n\n", A, operation, B, result);
     printf("Calculate something else? (y/n) ");
     again = sanitizeAgain();
 
     if (again == 'y'){
         main();
     } else{
-        printf("Goodbye!");
+        printf("Goodbye!\n");
     }
 
 }
@@ -85,9 +88,7 @@ if (again == 'y' || again == 'n'){
 char sanitizeOp(){
     char operation;
 
-   scanf("%s", &operation);
-
-    printf("operation: %c\n", operation);
+   scanf(" %c", &operation);
 
     if(operation == '+' || operation == '-' || operation == '*' || operation == '/'){
         return operation;
@@ -100,7 +101,6 @@ char sanitizeOp(){
 double sanitizeNum(){
     double number;
     scanf("%lf", &number);
-    printf("\nnumber is %f\n", number);
 
     return number;
 
