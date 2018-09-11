@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1536688480 source:c:\users\cigma\code\playing around\c\calculator\c_calculator\c_calculator\main.c
+1536701664 source:c:\users\cigma\code\playing around\c\calculator\c_calculator\c_calculator\main.c
 	<stdio.h>
 	<stdlib.h>
+	<ctype.h>
 
