@@ -21,15 +21,43 @@ double subtract(double A, double B){
 return A - B;
 }
 
-int main()
-{
+void sanitizeOp();
+
+void main(){
+    char operation;
+    char again;
+    printf("What operation would you like to perform? (type +, -, *, or /): ");
+    sanitizeOp();
+
+
+    printf("Calculate something else? (y/n) ");
+
+}
+
+void sanitizeOp(){
+char operation;
     double testA = 2;
     double testB = 4;
-    printf("Enter first number: ");
+   scanf("%c", &operation);
 
-    printf("\n Add: %f", add(testA, testB));
-    printf("\n Subtract: %f", subtract(testB, testA));
-    printf("\n Multiply: %f", multiply(testA, testB));
-    printf("\n Divide: %f", divide(testB, testA));
-    return 0;
+    printf("operation: %c\n", operation);
+
+    if(operation == '+'){
+        printf("Add: %f\n", add(testA, testB));
+
+    } else if (operation == '-'){
+        printf("Subtract: %f\n", subtract(testB, testA));
+
+    } else if (operation == '*'){
+        printf("Multiply: %f\n", multiply(testA, testB));
+
+    } else if (operation == '/'){
+        printf("Divide: %f\n", divide(testB, testA));
+
+    } else if(operation == '\n'){
+
+    } else {
+        printf("Please use a valid operator(+, -, *, or /)");
+        sanitizeOp();
+    }
 }
