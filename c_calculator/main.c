@@ -46,18 +46,19 @@ void main(){
     printf("What is your second number?: ");
     B = sanitizeNum();
 
-
-    if(operation == '+'){
+    switch(operation){
+    case '+':
         result = add(A, B);
-
-    } else if (operation == '-'){
+        break;
+    case '-':
         result = subtract(A, B);
-
-    } else if (operation == '*'){
+        break;
+    case '*':
         result = multiply(A, B);
-
-    } else if (operation == '/'){
+        break;
+    case '/':
         result = divide(A, B);
+        break;
     }
 
     printf("\n%f %c %f = %f\n\n", A, operation, B, result);
